@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Косметический салон К/С — Главная</title>
+    
+    <!-- ПОДКЛЮЧЕНИЕ ШРИФТОВ GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background-color: #fcecec; 
+            color: #3a3a3a; /* Тёмно-серый основной текст */
+            line-height: 1.6; 
+            font-family: 'Open Sans', sans-serif;
+        }
+        a { text-decoration: none; color: inherit; }
+
+        /* --- ШАПКА НА ВСЮ ШИРИНУ --- */
+        header {
+            display: flex;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: #f8dede;
+            border-bottom: 1px solid #d9baba;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+        .logo { 
+            font-family: 'Playfair Display', serif;
+            font-size: 28px; 
+            font-weight: 700; 
+            color: #8B3A4A; /* Тёмно-бордовый */
+            margin-right: 30px;
+        }
+        nav { flex-grow: 1; }
+        nav ul { 
+            display: flex; 
+            list-style: none; 
+            gap: 30px; 
+            justify-content: flex-end;
+        }
+        nav ul li a { 
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px; 
+            font-weight: 600;
+            color: #5a4a4a; /* Серо-коричневый */
+            transition: color 0.3s; 
+        }
+        nav ul li a:hover { color: #8B3A4A; }
+
+        /* --- БЛОК "КРАСОТА И УХОД" НА ФОНЕ ФОТО --- */
+        #home {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background: url('https://img.magnific.com/free-photo/top-view-beauty-products-with-copy-space_23-2149446515.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            color: #fff;
+        }
+        #home::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+        .hero-text {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            text-align: left;
+        }
+        .hero-text h1 { 
+            font-family: 'Playfair Display', serif;
+            font-size: 56px; 
+            font-weight: 700;
+            margin-bottom: 15px; 
+            color: #fff;
+        }
+        .hero-text p { 
+            font-family: 'Open Sans', sans-serif;
+            font-size: 18px; 
+            margin-bottom: 25px; 
+        }
+        /* Второй абзац делаем чуть меньше */
+        .hero-text p:last-of-type {
+            font-size: 15px;
+            color: #f0dada;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #d9baba;
+            color: #fff;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover { background-color: #8B3A4A; }
+
+        /* --- СЕКЦИЯ "ПОЧЕМУ ВЫБИРАЮТ НАС" --- */
+        section { padding: 60px 5%; border-bottom: 1px solid #e0caca; }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 700;
+            text-align: left;
+            margin-bottom: 30px;
+            color: #8B3A4A;
+        }
+
+        #why-us .features {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .feature-item {
+            flex: 1;
+            min-width: 200px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            color: #5a4a4a;
+            padding: 20px;
+            background-color: #f8dede;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        /* --- ПОДВАЛ --- */
+        footer {
+            background-color: #f8dede;
+            padding: 30px 5%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 14px;
+            color: #5a4a4a;
+            border-top: 1px solid #d9baba;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .footer-col { display: flex; flex-direction: column; gap: 10px; }
+        .footer-col a { text-decoration: underline; }
+        .footer-col a:hover { color: #8B3A4A; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">К/С</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="services.html">Услуги</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="about.html#contacts">Контакты</a></li>
+                <li><a href="about.html#contacts" class="btn" style="padding: 5px 15px; font-size: 13px;">Записаться</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="hero-text">
+            <h1>Красота и уход</h1>
+            <p>Ваша красота — наша забота</p>
+            <p>Профессиональный уход и комфортная атмосфера</p>
+            <a href="about.html#contacts" class="btn">Записаться</a>
+        </div>
+    </section>
+
+    <section id="why-us">
+        <h2>Почему выбирают нас</h2>
+        <div class="features">
+            <div class="feature-item">Профессиональная команда</div>
+            <div class="feature-item">Уютная атмосфера</div>
+            <div class="feature-item">Индивидуальный подход</div>
+            <div class="feature-item">Высокое качество</div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-col">
+            <span>Косметический салон</span>
+            <span>2026</span>
+        </div>
+        <div class="footer-col">
+            <span>+7 900 000-00-00</span>
+            <span>г. Оренбург</span>
+        </div>
+        <div class="footer-col">
+            <a href="#">Вконтакте</a>
+            <a href="#">Instagram</a>
+            <a href="#">MAX</a>
+        </div>
+    </footer>
+
+</body>
+</html>

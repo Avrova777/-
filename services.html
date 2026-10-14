@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Косметический салон К/С — Услуги</title>
+    
+    <!-- ПОДКЛЮЧЕНИЕ ШРИФТОВ GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: #fcecec; 
+            color: #3a3a3a; 
+            line-height: 1.6; 
+            font-family: 'Open Sans', sans-serif;
+        }
+        a { text-decoration: none; color: inherit; }
+
+        /* --- ШАПКА НА ВСЮ ШИРИНУ --- */
+        header {
+            display: flex;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: #f8dede;
+            border-bottom: 1px solid #d9baba;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+        .logo { 
+            font-family: 'Playfair Display', serif;
+            font-size: 28px; 
+            font-weight: 700; 
+            color: #8B3A4A; 
+            margin-right: 30px;
+        }
+        nav { flex-grow: 1; }
+        nav ul { 
+            display: flex; 
+            list-style: none; 
+            gap: 30px; 
+            justify-content: flex-end;
+        }
+        nav ul li a { 
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px; 
+            font-weight: 600;
+            color: #5a4a4a; 
+            transition: color 0.3s; 
+        }
+        nav ul li a:hover { color: #8B3A4A; }
+
+        /* --- СЕКЦИЯ УСЛУГ --- */
+        section { padding: 60px 5%; border-bottom: 1px solid #e0caca; }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 700;
+            text-align: left;
+            margin-bottom: 30px;
+            color: #8B3A4A;
+        }
+        h3 { 
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px; 
+            font-weight: 700;
+            margin-bottom: 15px; 
+            color: #5a4a4a; 
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .service-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+        
+        .service-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            display: block;
+        }
+        
+        .service-card p { 
+            font-size: 14px; 
+            color: #666; 
+            margin-bottom: 15px; 
+        }
+        .price { 
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600; 
+            color: #8B3A4A; 
+            margin-bottom: 15px; 
+            display: block; 
+            font-size: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: #d9baba;
+            color: #fff;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover { background-color: #8B3A4A; }
+
+        footer {
+            background-color: #f8dede;
+            padding: 30px 5%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 14px;
+            color: #5a4a4a;
+            border-top: 1px solid #d9baba;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .footer-col { display: flex; flex-direction: column; gap: 10px; }
+        .footer-col a { text-decoration: underline; }
+        .footer-col a:hover { color: #8B3A4A; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">К/С</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="services.html">Услуги</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="about.html#contacts">Контакты</a></li>
+                <li><a href="about.html#contacts" class="btn" style="padding: 5px 15px; font-size: 13px;">Записаться</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="services">
+        <h2>Наши услуги</h2>
+        <div class="services-grid">
+            
+            <div class="service-card">
+                <img src="https://queenlux.by/wp-content/uploads/1598249978_23.jpg" alt="Уход за лицом" class="service-img">
+                <h3>Уход за лицом</h3>
+                <p>Очищение, увлажнение и уход за кожей лица.</p>
+                <span class="price">Очищение - 1500р.<br>Увлажнение - 1800р.<br>Маска - 1000р.</span>
+                <a href="about.html#contacts" class="btn">Записаться</a>
+            </div>
+
+            <div class="service-card">
+                <img src="https://avatars.mds.yandex.net/i?id=2953201b62d5dd1376c6f0bc370a9804007626ec-2286743-images-thumbs&n=13" alt="Уход за волосами" class="service-img">
+                <h3>Уход за волосами</h3>
+                <p>Стрижки, укладки и профессиональный уход.</p>
+                <span class="price">Стрижка - 1800р.<br>Укладка - 1200р.<br>Проф. уход - 1500р.</span>
+                <a href="about.html#contacts" class="btn">Записаться</a>
+            </div>
+
+            <div class="service-card">
+                <img src="https://avatars.mds.yandex.net/i?id=1cf3cfc2f0c9e64f555835ee9a96de74ee63a832-16316375-images-thumbs&n=13" alt="Уход за ногтями" class="service-img">
+                <h3>Уход за ногтями</h3>
+                <p>Маникюр и уход за ногтями.</p>
+                <span class="price">Маникюр - 1200р.<br>Покрытие - 1500р.<br>Уход - 1000р.</span>
+                <a href="about.html#contacts" class="btn">Записаться</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-col">
+            <span>Косметический салон</span>
+            <span>2026</span>
+        </div>
+        <div class="footer-col">
+            <span>+7 900 000-00-00</span>
+            <span>г. Оренбург</span>
+        </div>
+        <div class="footer-col">
+            <a href="#">Вконтакте</a>
+            <a href="#">Instagram</a>
+            <a href="#">MAX</a>
+        </div>
+    </footer>
+
+</body>
+</html>
